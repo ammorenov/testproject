@@ -30,10 +30,31 @@ class Show_textUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testShowButton() {
             let app = XCUIApplication()
             app.buttons["Show"].tap()
-            XCTAssertEqual("Ты пидор!", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
+            let labelObject = app.staticTexts.element(matching:.any, identifier: "lableTextId")
+            let labelText = labelObject.label
+            XCTAssertEqual("Ты пидор!", labelText)
     }
     
+    func testHideButton() {
+        let app = XCUIApplication()
+        app.buttons["Show"].tap()
+        app.buttons["Hide"].tap()
+        XCTAssertEqual("Show text", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
+    }
+    
+    func testShowButtonNegative() {
+        let app = XCUIApplication()
+        app.buttons["Show"].tap()
+        XCTAssertNotEqual("пидор!", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
+    }
+    
+    func testHideButtonNegative() {
+        let app = XCUIApplication()
+        app.buttons["Show"].tap()
+        app.buttons["Hide"].tap()
+        XCTAssertNotEqual("Show", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
+    }
 }
