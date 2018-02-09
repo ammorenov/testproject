@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var labelText: UILabel!
+    @IBAction func onShowTextClicked(_ sender: Any) {
+        labelText.text = "Ты пидор!"
+    }
+    @IBAction func onHideButtonClicked(_ sender: Any) {
+       labelText.text = "Show text"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
