@@ -17,6 +17,26 @@ class ViewController: UIViewController {
        labelText.text = "Show text"
     }
     
+    @IBOutlet weak var confirmLabel: UILabel!
+    
+    @IBAction func confirmSwitch(_ sender: UISwitch) {
+        
+        
+        if (sender .isOn == true)
+        {
+            confirmLabel.text = "Да, я пидор!"
+            
+        }
+        else
+        
+            {
+                
+            self.confirmLabel.text = "Нет, я не пидор!"
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
