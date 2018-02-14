@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var labelText: UILabel!
     @IBAction func onShowTextClicked(_ sender: Any) {
-        labelText.text = "Ты пидор!"
+        labelText.text = "Ты хороший!"
     }
     @IBAction func onHideButtonClicked(_ sender: Any) {
        labelText.text = "Show text"
@@ -24,14 +24,14 @@ class ViewController: UIViewController {
         
         if (sender .isOn == true)
         {
-            confirmLabel.text = "Да, я пидор!"
+            confirmLabel.text = "Да, я хороший!"
             
         }
         else
         
             {
                 
-            self.confirmLabel.text = "Нет, я не пидор!"
+            self.confirmLabel.text = "Нет, я плохой!"
             
         }
         
