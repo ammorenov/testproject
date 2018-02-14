@@ -17,21 +17,21 @@ class ViewController: UIViewController {
        labelText.text = "Show text"
     }
     
-    @IBOutlet weak var confirmLabel: UILabel!
+    @IBOutlet weak var comfirmLabel: UILabel!
     
-    @IBAction func confirmSwitch(_ sender: UISwitch) {
+    @IBAction func comfirmSwitch(_ sender: UISwitch) {
         
         
         if (sender .isOn == true)
         {
-            confirmLabel.text = "Да, я хороший!"
+            comfirmLabel.text = "Да, я хороший!"
             
         }
         else
         
             {
                 
-            self.confirmLabel.text = "Нет, я плохой!"
+            self.comfirmLabel.text = "Нет, я плохой!"
             
         }
         

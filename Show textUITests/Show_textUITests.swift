@@ -35,7 +35,7 @@ class Show_textUITests: XCTestCase {
             app.buttons["Show"].tap()
             let labelObject = app.staticTexts.element(matching:.any, identifier: "lableTextId")
             let labelText = labelObject.label
-            XCTAssertEqual("Ты пидор!", labelText)
+            XCTAssertEqual("Ты молодец!", labelText)
     }
     
     func testHideButton() {
@@ -56,5 +56,13 @@ class Show_textUITests: XCTestCase {
         app.buttons["Show"].tap()
         app.buttons["Hide"].tap()
         XCTAssertNotEqual("Show", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
+    }
+    
+    func testSwitchIs()  {
+        let app = XCUIApplication()
+        app.switches["0"].tap()
+        XCTAssertEqual("Да, я хороший!", app.staticTexts.element(matching:.any, identifier: "confirmLabelId").label )
+        app.switches["1"].tap()
+        XCTAssertNotEqual("Да, я хороший!", app.staticTexts.element(matching:.any, identifier: "confirmLabelId").label )
     }
 }
