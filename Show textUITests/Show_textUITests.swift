@@ -48,7 +48,7 @@ class Show_textUITests: XCTestCase {
     func testShowButtonNegative() {
         let app = XCUIApplication()
         app.buttons["Show"].tap()
-        XCTAssertNotEqual("пидор!", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
+        XCTAssertNotEqual("плохой", app.staticTexts.element(matching:.any, identifier: "lableTextId").label)
     }
     
     func testHideButtonNegative() {
